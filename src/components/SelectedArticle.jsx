@@ -1,17 +1,38 @@
-const MainArticle = ({selectedArticle}) => {
-    return (<section className="article">
-        <img className="banner" src={selectedArticle.article_img_url} alt={selectedArticle.body} />
-        <div className="detail">
-            <h1>Title: {selectedArticle.title}</h1>
-            <p>Topic: {selectedArticle.article_id}</p>
-            <p>Topic: {selectedArticle.topic}</p>
-            <p>Votes: {selectedArticle.votes}</p>
-            <p>Created: {selectedArticle.created_at}</p>
-            <p>Comment Count: {selectedArticle.comment_count}</p>
-            <p>Author: {selectedArticle.author}</p>
-            <p>body: {selectedArticle.body}</p>
-        </div>
-</section>)
-}
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { getArticles } from '../utils/api-requests.js';
+import ArticleComments from './ArticleComments.jsx';
+import SelectedArticleVisual from './SelectedArticleVisual.jsx';
+import Loading from './Loading.jsx';
+import Error from './Error.jsx';
 
-export default MainArticle;
+
+const SelectedArticle = () => {
+    const [selectedArticle, setSelectedArticle] = useState({});
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState(null);
+    const { article_id } = useParams();
+
+    useEffect(() =>{
+        setIsLoading(true)
+
+        getArticles(article_id)
+        .then((data)=>{ 
+            setSelectedArticle(data.article)
+            setIsLoading(false)
+        }).catch((error)=> {
+            setError(error.response);
+            setIsLoading(false);
+          });
+    },[]);
+
+    return (<>
+    {isLoading ? <Loading /> : error ? <Error log={error}/> :
+    <>
+        <SelectedArticleVisual selectedArticle={selectedArticle}/>
+        <ArticleComments />
+    </>
+    }</>)
+    }
+
+export default SelectedArticle;

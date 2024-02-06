@@ -67,9 +67,14 @@ p {
 }
 
 .error {
-    font-size: 32px;
-    text-align: center;
     margin: 100px;
+    text-align: center;
+    h1 {
+        font-size: 48px;
+    }
+    p {
+        font-size: 32px;
+    }
 }
 
 body main {
