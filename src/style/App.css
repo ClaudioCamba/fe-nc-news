@@ -4,7 +4,8 @@
 */
 * {
   box-sizing: border-box;
-  font-size: 0;
+  margin: 0;
+  padding: 0;
 }
 
 html, body, div, span, applet, object, iframe,
@@ -61,14 +62,39 @@ p {
   font-size: 16px;
 }
 
+.loading {
+  font-size: 32px;
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin: 100px auto;
+}
+
+.error {
+  font-size: 32px;
+  text-align: center;
+  margin: 100px;
+}
+
+body main {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: block;
+}
+
 .article-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
-  padding: 20px;
   gap: 20px;
+}
+.article-list .article-item:hover {
+  border: 5px solid red;
+}
+.article-list .article-item {
+  border: 5px solid lightgrey;
 }
 .article-list .article-item a {
   max-width: 200px;
@@ -78,7 +104,7 @@ p {
   display: inline-block;
   width: 100%;
   height: auto;
-  max-width: 400px;
+  max-width: 375px;
 }
 .article-list .article-item a .details {
   position: absolute;
@@ -88,11 +114,6 @@ p {
   color: #FFF;
 }
 
-main.article-page {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: block;
-}
 main.article-page .article {
   position: relative;
 }

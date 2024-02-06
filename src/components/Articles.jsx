@@ -2,7 +2,7 @@ const Article = ({ArticleData,index}) => {
     return (<>
     <li className="article-item">
         <a href={`/article/${ArticleData.article_id}`}>
-            <img src={ArticleData.article_img_url } alt="new articles image" />
+            <img src={ArticleData.article_img_url } alt={ArticleData.title} />
             <div className="details">
                 <p>ID: {ArticleData.article_id}</p>
                 <p>Title: {ArticleData.title}</p>
