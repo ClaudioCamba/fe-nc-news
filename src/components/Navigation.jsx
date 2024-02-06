@@ -12,7 +12,7 @@ function Navigation() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="/">Articles</Nav.Link>
-            <NavDropdown title="Dropdown" id="collapsible-nav-dropdown">
+            <NavDropdown title="Topics" id="collapsible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Topics</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
                 Another action
@@ -25,10 +25,7 @@ function Navigation() {
             </NavDropdown>
           </Nav>
           <Nav>
-            <Nav.Link href="#deets">More deets</Nav.Link>
-            <Nav.Link eventKey={2} href="#memes">
-              Dank memes
-            </Nav.Link>
+            <Nav.Link href="#deets">Username</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

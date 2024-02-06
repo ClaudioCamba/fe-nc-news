@@ -2,6 +2,10 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+* {
+    box-sizing: border-box;
+    font-size: 0;
+}
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -47,6 +51,11 @@ table {
 	border-spacing: 0;
 }
 
+// General Styling
+p {
+    font-size: 16px;
+}
+
 .article-list {
     display: flex;
     flex-direction: row;
@@ -82,3 +91,63 @@ table {
 
 
 
+// Select Article Page
+main.article-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: block;
+    .article {
+        position: relative;
+
+        .banner {
+            width:100%;
+        }
+        
+        .detail {
+            position: absolute;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.5);
+            color: #FFF;
+            padding: 20px;
+        }
+    }
+
+    .comments {
+        background-color: #FFF;
+        padding: 20px;
+
+        .title {
+            color: #000;
+            font-size: 32px;
+            margin: 20px 0;
+        }
+        .list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            .comment {
+                background-color: #DDD;
+                border-radius: 10px;
+                padding: 20px;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        .article {
+            position: relative;
+    
+            .banner {
+                width:100%;
+            }
+            
+            .detail {
+                position: unset;
+                background-color: #000;
+                color: #FFF;
+                padding: 20px;
+            }
+        }
+      }
+}

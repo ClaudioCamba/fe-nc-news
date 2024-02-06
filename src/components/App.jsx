@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import { getArticles } from '../utils/api-requests.js';
 import Navigation from './Navigation.jsx';
 import ArticleList from './ArticleList.jsx';
+import ArticlePage from '../pages/ArticlePage.jsx';
 
 function App() {
   const [articles, setArticles] = useState([]);
@@ -24,8 +25,8 @@ function App() {
     <>
       <Navigation />
       <Routes>
-        <Route path="/" element={<ArticleList isLoading={isLoading} articles={articles} />} />
-        <Route path="/article" element={<h1>Article test</h1>} />
+        <Route path="/" element={ <ArticleList isLoading={isLoading} articles={articles} /> } />
+        <Route path="/article/:article_id" element={ <ArticlePage /> } />
       </Routes>
     </>
   )
