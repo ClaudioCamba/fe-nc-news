@@ -5,10 +5,13 @@ import { Routes, Route } from 'react-router-dom';
 import { getArticles } from '../utils/api-requests.js';
 import Navigation from './Navigation.jsx';
 import ArticleList from './ArticleList.jsx';
+import ArticlePage from '../pages/ArticlePage.jsx';
+import Loading from './Loading.jsx';
 
 function App() {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(()=>{
     setIsLoading(true);
@@ -16,7 +19,11 @@ function App() {
     .then((data)=>{
       setArticles(data.articles);
       setIsLoading(false);
-    })
+      setError(null);
+    }).catch((error)=>{
+      setError(error.response.data.msg);
+      setIsLoading(false);
+    });
   },[])
  
 
@@ -24,8 +31,12 @@ function App() {
     <>
       <Navigation />
       <Routes>
-        <Route path="/" element={<ArticleList isLoading={isLoading} articles={articles} />} />
-        <Route path="/article" element={<h1>Article test</h1>} />
+        <Route path="/" element={<main className='article-list-page'>
+        {isLoading ? <Loading /> : 
+        error ? <h1 className='error'>{error}</h1> : <ArticleList articles={articles} /> }
+        </main>} />
+
+        <Route path="/article/:article_id" element={ <ArticlePage /> } />
       </Routes>
     </>
   )

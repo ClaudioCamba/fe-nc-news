@@ -2,6 +2,12 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -52,14 +58,43 @@ table {
   border-spacing: 0;
 }
 
+p {
+  font-size: 16px;
+}
+
+.loading {
+  font-size: 32px;
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin: 100px auto;
+}
+
+.error {
+  font-size: 32px;
+  text-align: center;
+  margin: 100px;
+}
+
+body main {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: block;
+}
+
 .article-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
-  padding: 20px;
   gap: 20px;
+}
+.article-list .article-item:hover {
+  border: 5px solid red;
+}
+.article-list .article-item {
+  border: 5px solid lightgrey;
 }
 .article-list .article-item a {
   max-width: 200px;
@@ -69,7 +104,7 @@ table {
   display: inline-block;
   width: 100%;
   height: auto;
-  max-width: 400px;
+  max-width: 375px;
 }
 .article-list .article-item a .details {
   position: absolute;
@@ -77,4 +112,51 @@ table {
   background-color: rgba(0, 0, 0, 0.7);
   padding: 20px;
   color: #FFF;
+}
+
+main.article-page .article {
+  position: relative;
+}
+main.article-page .article .banner {
+  width: 100%;
+}
+main.article-page .article .detail {
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #FFF;
+  padding: 20px;
+}
+main.article-page .comments {
+  background-color: #FFF;
+  padding: 20px;
+}
+main.article-page .comments .title {
+  color: #000;
+  font-size: 32px;
+  margin: 20px 0;
+}
+main.article-page .comments .list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+main.article-page .comments .list .comment {
+  background-color: #DDD;
+  border-radius: 10px;
+  padding: 20px;
+}
+@media only screen and (max-width: 768px) {
+  main.article-page .article {
+    position: relative;
+  }
+  main.article-page .article .banner {
+    width: 100%;
+  }
+  main.article-page .article .detail {
+    position: unset;
+    background-color: #000;
+    color: #FFF;
+    padding: 20px;
+  }
 }/*# sourceMappingURL=App.css.map */
