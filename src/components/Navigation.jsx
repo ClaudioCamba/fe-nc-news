@@ -7,12 +7,11 @@ function Navigation() {
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="#home">NC News!</Navbar.Brand>
+        <Navbar.Brand href="/">NC News!</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/articles">Articles</Nav.Link>
+            <Nav.Link href="/">Articles</Nav.Link>
             <NavDropdown title="Dropdown" id="collapsible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Topics</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">

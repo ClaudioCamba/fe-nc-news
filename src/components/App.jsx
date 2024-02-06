@@ -25,7 +25,7 @@ function App() {
       <Navigation />
       <Routes>
         <Route path="/" element={<ArticleList isLoading={isLoading} articles={articles} />} />
-        <Route path="/articles" element={<h1>Article test</h1>} />
+        <Route path="/article" element={<h1>Article test</h1>} />
       </Routes>
     </>
   )
