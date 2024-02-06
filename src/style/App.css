@@ -58,33 +58,33 @@ table {
   border-spacing: 0;
 }
 
-p {
+body main {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: block;
+}
+body main * {
+  font-size: 0;
+}
+body main p {
   font-size: 16px;
 }
-
-.loading {
+body main .loading {
   font-size: 32px;
   width: 100px;
   height: 100px;
   display: block;
   margin: 100px auto;
 }
-
-.error {
+body main .error {
   margin: 100px;
   text-align: center;
 }
-.error h1 {
+body main .error h1 {
   font-size: 48px;
 }
-.error p {
+body main .error p {
   font-size: 32px;
-}
-
-body main {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: block;
 }
 
 .article-list {
@@ -117,6 +117,7 @@ body main {
   background-color: rgba(0, 0, 0, 0.7);
   padding: 20px;
   color: #FFF;
+  width: 100%;
 }
 
 main.article-page .article {
