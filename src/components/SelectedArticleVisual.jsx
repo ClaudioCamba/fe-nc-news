@@ -1,16 +1,24 @@
 const SelectedArticleVisual = ({selectedArticle}) =>{
     return (
         <section className="article">
-        <img className="banner" src={selectedArticle.article_img_url} alt={selectedArticle.body} />
-        <div className="detail">
-            <h1>Title: {selectedArticle.title}</h1>
-            <p>Topic: {selectedArticle.article_id}</p>
-            <p>Topic: {selectedArticle.topic}</p>
-            <p>Votes: {selectedArticle.votes}</p>
-            <p>Created: {selectedArticle.created_at}</p>
-            <p>Comment Count: {selectedArticle.comment_count}</p>
-            <p>Author: {selectedArticle.author}</p>
-            <p>body: {selectedArticle.body}</p>
+        <div className="intro">
+            <h1>{selectedArticle.title}</h1>
+            <p>By {selectedArticle.author} <span class="material-symbols-outlined">schedule </span> {selectedArticle.created_at}</p>
+        </div>
+        
+        <div className="banner">
+            <span className="topic-badge">{selectedArticle.topic}</span>
+            <img src={selectedArticle.article_img_url} alt={selectedArticle.body} />
+        </div>
+        
+        <div className="detail">    
+            <p>{selectedArticle.body}</p>
+            <div className="comment-like">
+            <p><span class="material-symbols-outlined">comment</span> {selectedArticle.comment_count}</p>
+            {/* <p>id: {selectedArticle.article_id}</p> */}
+            <p><span class="material-symbols-outlined">thumbs_up_down </span> {selectedArticle.votes}</p>
+            </div>
+
         </div>
         </section>
     )
