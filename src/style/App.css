@@ -130,6 +130,7 @@ main.article-page .article {
   display: grid;
   grid-template-rows: auto 1fr;
   grid-template-columns: 1fr 1fr;
+  align-items: center;
 }
 main.article-page .article .intro {
   grid-area: 1/1/2/3;
@@ -169,15 +170,18 @@ main.article-page .article .detail {
   padding: 20px;
   border: 20px solid #DDD;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-start;
   flex-direction: column;
   gap: 12px;
 }
 main.article-page .article .vote {
   display: flex;
+  align-items: center;
+  justify-content: flex-end;
   gap: 12px;
-  margin: 12px 0;
+  margin: 12px 0 0 0;
+  width: 100%;
 }
 main.article-page .comments {
   background-color: #FFF;

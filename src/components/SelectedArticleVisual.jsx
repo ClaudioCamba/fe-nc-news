@@ -16,12 +16,10 @@ const SelectedArticleVisual = ({selectedArticle}) =>{
             <span className="topic-badge">{selectedArticle.topic}</span>
             <img src={selectedArticle.article_img_url} alt={selectedArticle.body} />
         </div>
-        
         <div className="detail">    
             <p>{selectedArticle.body}</p>
+            <Votes votes={selectedArticle.votes}/>
         </div>
-        <Votes votes={selectedArticle.votes}/>
-
         </section>
     )
 }
