@@ -153,6 +153,10 @@ main.article-page {
                 flex-direction: row;
                 line-height: 1.6;
                 gap: 6px;
+
+                span {
+                    margin-left: 12px;
+                }
             }
         }
 
@@ -183,11 +187,12 @@ main.article-page {
             align-items: flex-start;
             flex-direction: column;
             gap: 12px;
+        }
 
-            .comment-like {
-                display: flex;
-                gap: 12px;
-            }
+        .vote {
+            display: flex;
+            gap: 12px;
+            margin: 12px 0;
         }
     }
 

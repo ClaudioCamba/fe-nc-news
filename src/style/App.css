@@ -145,6 +145,9 @@ main.article-page .article .intro p {
   line-height: 1.6;
   gap: 6px;
 }
+main.article-page .article .intro p span {
+  margin-left: 12px;
+}
 main.article-page .article .banner {
   position: relative;
   width: 100%;
@@ -171,9 +174,10 @@ main.article-page .article .detail {
   flex-direction: column;
   gap: 12px;
 }
-main.article-page .article .detail .comment-like {
+main.article-page .article .vote {
   display: flex;
   gap: 12px;
+  margin: 12px 0;
 }
 main.article-page .comments {
   background-color: #FFF;
