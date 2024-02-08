@@ -12,10 +12,7 @@ const Votes = ({votes}) => {
             <VoteUpButton setError={setError} setVotes={setVotes}/>
             <VoteDownButton setError={setError} setVotes={setVotes}/>
         </div>
-
-                {
-                    error ? <div className="vote-error"><p>{error}</p></div> : null
-                }
+        { error ? <div className="vote-error"><p>{error}</p></div> : null }
     </>)
 }
 

@@ -93,6 +93,23 @@ body main .topic-badge {
   letter-spacing: 0.5px;
 }
 
+nav .nav-user {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+}
+nav .nav-user span {
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  display: flex;
+  border: 3px solid #000;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: normal;
+}
+
 .article-list {
   display: flex;
   flex-direction: row;
@@ -212,8 +229,50 @@ main.article-page .article .vote-error {
 main.article-page .article .vote-error p {
   font-size: 12px;
 }
-main.article-page .comments {
-  background-color: #FFF;
+main.article-page .comments .comment-form {
+  font-size: 16px;
+  display: flex;
+  width: 100%;
+  gap: 24px;
+  justify-content: space-between;
+  align-items: stretch;
+  margin: 32px 0;
+  background-color: #dae8f2;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #335ED7;
+}
+main.article-page .comments .comment-form label {
+  font-size: 16px;
+}
+main.article-page .comments .comment-form .group-form {
+  width: 100%;
+}
+main.article-page .comments .comment-form .group-form .form-feedback {
+  display: none;
+  padding-top: 6px;
+}
+main.article-page .comments .comment-form .group-form .form-feedback span {
+  display: inline-block;
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+main.article-page .comments .comment-form .group-form .form-feedback.invalid {
+  display: block;
+}
+main.article-page .comments .comment-form .group-form .form-feedback.invalid span {
+  background-color: #fce0e3;
+  border: 1px solid #8b0000;
+  color: #8b0000;
+}
+main.article-page .comments .comment-form .group-form .form-feedback.valid {
+  display: block;
+}
+main.article-page .comments .comment-form .group-form .form-feedback.valid span {
+  background-color: #e0faee;
+  border: 1px solid #006400;
+  color: #006400;
 }
 main.article-page .comments .title {
   color: #000;
@@ -239,5 +298,8 @@ main.article-page .comments .list .comment {
   }
   main.article-page .article .detail {
     grid-area: 3/1/4/3;
+  }
+  main.article-page .comments .comment-form {
+    flex-direction: column;
   }
 }/*# sourceMappingURL=App.css.map */

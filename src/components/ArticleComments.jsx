@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getComments } from '../utils/api-requests.js';
+import PostComment from './PostComment.jsx';
 import Comment from './Comment.jsx';
 import Loading from './Loading.jsx';
 import Error from './Error.jsx';
@@ -25,10 +26,11 @@ const ArticleComments = () => {
     },[]);
 
     return (<section className="comments">
-        <h3 className="title">Comments</h3>
+        <PostComment setArticleComments={setArticleComments} />
+
         {isLoading ? <Loading /> : error ? <Error log={error}/> :
         <ul  className="list">
-            { articleComments.map((comment)=> <Comment key={comment.comment_id} comment={comment} />)}
+            { articleComments.map((comment,index)=> <Comment key={index} comment={comment} />)}
         </ul>}
     </section>)
 }

@@ -18,9 +18,17 @@ export const getComments = (searchParams) => {
 }
 
 export const patchVotes = (searchParams,action) => {
-    const update = () => action === 'upvote' ? { inc_votes :  +1 } : { inc_votes :  -1 };
+    const update = action === 'upvote' ? { inc_votes :  +1 } : { inc_votes :  -1 };
     return axios.patch(`
-    https://nc-news-qvgz.onrender.com/api/articles/${searchParams}`,update())
+    https://nc-news-qvgz.onrender.com/api/articles/${searchParams}`,update)
+    .then((response)=>{
+        return response.data;
+    })
+}
+
+export const postComment = (searchParams,body) => {
+    return axios.post(`
+    https://nc-news-qvgz.onrender.com/api/articles/${searchParams}/comments`, body)
     .then((response)=>{
         return response.data;
     })
