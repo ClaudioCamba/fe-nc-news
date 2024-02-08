@@ -98,6 +98,28 @@ body main {
     }
 }
 
+// Navigation
+nav {
+    .nav-user {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 12px;
+        
+        span {
+            width: 40px;
+            height: 40px;
+            overflow: hidden;
+            display: flex;
+            border: 3px solid #000;
+            border-radius: 50%;
+            justify-content: center;
+            align-items: normal;
+        }
+    }
+}
+
+
 // Article List
 .article-list {
     display: flex;
@@ -235,8 +257,55 @@ main.article-page {
     }
 
     .comments {
-        background-color: #FFF;
-        // padding: 20px;
+        .comment-form {
+            font-size: 16px;
+            display: flex;
+            width: 100%;
+            gap: 24px;
+            justify-content: space-between;
+            align-items: stretch;
+            margin: 32px 0;
+            background-color: #dae8f2;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #335ED7;
+
+            label {
+                font-size: 16px;
+            }
+
+            .group-form {
+                width: 100%;
+
+                .form-feedback {
+                    display: none;
+                    padding-top: 6px;
+                    span {
+                        display: inline-block;
+                        font-size: 12px;
+                        padding: 6px 12px;
+                        border-radius: 6px;
+                    }
+
+                    &.invalid{
+                        display: block;
+                        span{
+                            background-color: #fce0e3;
+                            border: 1px solid #8b0000;  
+                            color: #8b0000;
+                        }
+                    }
+                    &.valid {
+                        display: block;
+                        span {
+                            background-color: #e0faee;
+                            border: 1px solid #006400;
+                            color: #006400;
+                        }
+                    }
+                }
+            }
+        }
 
         .title {
             color: #000;
@@ -264,6 +333,11 @@ main.article-page {
             }
             .detail {
                 grid-area: 3/1/4/3;
+            }
+        }
+        .comments {
+            .comment-form {
+                flex-direction: column;
             }
         }
       }

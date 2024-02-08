@@ -2,6 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import UserNavigation from './UserNavigation';
 
 function Navigation() {
   return (
@@ -19,7 +20,9 @@ function Navigation() {
             </NavDropdown> */}
           </Nav>
           <Nav>
-            <Nav.Link href="#deets">Username</Nav.Link>
+            <Nav.Link href="/">
+              <UserNavigation />
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
