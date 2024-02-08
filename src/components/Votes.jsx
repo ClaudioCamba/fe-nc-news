@@ -1,24 +1,22 @@
 import { useState } from "react";
-
-const handleUpVote = (event) => {
-    console.log('Up')
-    // console.log('clicked')
-}
-const handleDownVote = (event) => {
-    console.log('Down')
-    // console.log('clicked')
-}
+import VoteUpButton from './VoteUpButton.jsx';
+import VoteDownButton from './VoteDownButton.jsx';
 
 const Votes = ({votes}) => {
     const [vote, setVotes] = useState(votes);
+    const [error, setError] = useState(null);
 
-    return (
+    return (<>
         <div className="vote">
-            <p><span className="material-symbols-outlined">thumbs_up_down </span> {vote}</p>
-            <button onClick={handleUpVote} className="thumb-up"><span className="material-symbols-outlined">thumb_up</span></button>
-            <button onClick={handleDownVote} className="thumb-down"><span className="material-symbols-outlined">thumb_down</span></button>
+            <p><span className="material-symbols-outlined">thumbs_up_down </span> <span className="vote-display">{vote}</span></p>
+            <VoteUpButton setError={setError} setVotes={setVotes}/>
+            <VoteDownButton setError={setError} setVotes={setVotes}/>
         </div>
-    )
+
+                {
+                    error ? <div className="vote-error"><p>{error}</p></div> : null
+                }
+    </>)
 }
 
 export default Votes;

@@ -183,6 +183,35 @@ main.article-page .article .vote {
   margin: 12px 0 0 0;
   width: 100%;
 }
+main.article-page .article .vote .vote-display {
+  margin: 0 12px;
+  font-size: 32px;
+}
+main.article-page .article .vote button {
+  padding: 6px 12px;
+  color: #FFF;
+  border-radius: 5px;
+}
+main.article-page .article .vote button.thumb-up {
+  background-color: #1B8753;
+  border: 3px solid darkgreen;
+}
+main.article-page .article .vote button.thumb-down {
+  background-color: #DC3445;
+  border: 3px solid darkred;
+}
+main.article-page .article .vote-error {
+  background-color: pink;
+  padding: 6px;
+  text-align: center;
+  width: 100%;
+  color: red;
+  border: 1px solid red;
+  border-radius: 5px;
+}
+main.article-page .article .vote-error p {
+  font-size: 12px;
+}
 main.article-page .comments {
   background-color: #FFF;
 }

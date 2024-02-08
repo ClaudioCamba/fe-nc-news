@@ -14,7 +14,7 @@ const SelectedArticleVisual = ({selectedArticle}) =>{
         
         <div className="banner">
             <span className="topic-badge">{selectedArticle.topic}</span>
-            <img src={selectedArticle.article_img_url} alt={selectedArticle.body} />
+            <img src={selectedArticle.article_img_url} alt={selectedArticle.title} />
         </div>
         <div className="detail">    
             <p>{selectedArticle.body}</p>
