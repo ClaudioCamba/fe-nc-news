@@ -16,3 +16,12 @@ export const getComments = (searchParams) => {
         return response.data;
     })
 }
+
+export const patchVotes = (searchParams,action) => {
+    const update = () => action === 'upvote' ? { inc_votes :  +1 } : { inc_votes :  -1 };
+    return axios.patch(`
+    https://nc-news-qvgz.onrender.com/api/articles/${searchParams}`,update())
+    .then((response)=>{
+        return response.data;
+    })
+}
