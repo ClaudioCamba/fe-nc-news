@@ -2,7 +2,8 @@ import { getArticles } from '../utils/api-requests.js';
 import { useState, useEffect } from 'react';
 import Loading from './Loading.jsx';
 import Error from './Error.jsx';
-import SingleArticleList from './SingleArticleList';
+import ArticleListing from './ArticleListing.jsx';
+import SortingArticles from './SortingArticles';
 
 const ArticleList = ({query}) => {
     const [articles, setArticles] = useState([]);
@@ -23,10 +24,12 @@ const ArticleList = ({query}) => {
     },[])
       
   return (<>{
-            isLoading ? <Loading /> : error ? <Error log={error}/> :
-            <section className="article-list">
-            { articles.map((article,index)=> <SingleArticleList key={article.article_id} articleData={article} index={index}/>) }
-            </section> 
+            isLoading ? <Loading /> : 
+            error ? <Error log={error}/> : 
+            <>
+              <SortingArticles articles={articles} setArticles={setArticles}/>
+              <ArticleListing articles={articles} />
+            </>
         }</>)
 }
 
