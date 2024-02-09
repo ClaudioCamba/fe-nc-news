@@ -5,13 +5,14 @@ import { postComment } from '../utils/api-requests.js';
 import CommentForm from './CommentForm.jsx';
 
 // post request comment 
-const PostComment = ({setArticleComments}) => {
+const PostComment = ({articleComments,setArticleComments}) => {
     const [feedback, setFeedback] = useState({body:'', class:''});
     const [disableForm, setDisableForm] = useState(false)
     const { user,setUser } = useContext(SignedInUserContext);
     const { article_id } = useParams();
     
     const handlePostComment = (commentValue) => {
+        const originalComments = articleComments.map(comment => comment);
         const optimisticComment = {
             body: commentValue,
             author: user.username,
@@ -20,12 +21,11 @@ const PostComment = ({setArticleComments}) => {
             created_at: Date.now()
         }
 
-        setArticleComments((allComments)=>{
-            return [optimisticComment,...allComments];
-        });
+        setArticleComments((allComments)=>[optimisticComment,...allComments]);
 
         postComment(article_id,optimisticComment)
         .then((data)=>{
+            setArticleComments((allComments)=>[data.comment,...originalComments]);
             setFeedback({body:'Your comment has been posted', class:'valid'});
             setDisableForm(false)
         }).catch((error)=>{

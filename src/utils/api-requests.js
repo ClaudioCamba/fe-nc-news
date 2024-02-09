@@ -33,3 +33,11 @@ export const postComment = (searchParams,body) => {
         return response.data;
     })
 }
+
+export const deleteComment = (commentId) => {
+    return axios.delete(`
+    https://nc-news-qvgz.onrender.com/api/comments/${commentId}`)
+    .then((response)=>{
+        return response.data;
+    })
+}
