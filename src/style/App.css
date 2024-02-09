@@ -116,6 +116,45 @@ nav .nav-user span {
   padding: 0 32px;
 }
 
+.sorting {
+  display: flex;
+  margin: 12px;
+  justify-content: center;
+  gap: 12px;
+  align-items: center;
+  margin: 16px 0;
+  padding: 16px;
+  background-color: #dae8f2;
+  border: 1px solid #335ED7;
+}
+.sorting h3 {
+  font-size: 24px;
+}
+.sorting form {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  align-items: center;
+}
+.sorting form fieldset {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  align-items: center;
+}
+.sorting form fieldset label {
+  font-size: 16px;
+  margin: 0;
+}
+@media only screen and (max-width: 768px) {
+  .sorting {
+    flex-direction: column;
+  }
+  .sorting form {
+    flex-direction: column;
+  }
+}
+
 .article-list {
   display: flex;
   flex-direction: row;

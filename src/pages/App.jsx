@@ -26,7 +26,7 @@ function App() {
     <Navigation topics={topics}/>
       <Routes>
         <Route path="/" element={ <ArticleListPage /> }/>
-        <Route path="/articles/" element={ <ArticleTopicPage /> } />
+        <Route path="/articles?" element={ <ArticleTopicPage /> } />
         <Route path="/article/:article_id" element={ <ArticlePage /> } />
       </Routes>
     </SignedInUserProvider>

@@ -4,8 +4,6 @@
 */
 * {
     box-sizing: border-box;
-    // font-family: Arial, Helvetica, sans-serif;
-    // font-size: 0;
     margin:0;
     padding:0;
 }
@@ -54,7 +52,7 @@ table {
 	border-spacing: 0;
 }
 
-// General Styling
+// General Styling --------------------------------
 body main {
     max-width: 1200px;
     margin: 0 auto;
@@ -96,7 +94,7 @@ body main {
     }
 }
 
-// Navigation
+// Navigation --------------------------------
 nav {
     .nav-user {
         display: flex;
@@ -118,13 +116,54 @@ nav {
 }
 
 
-// Article List
+// Article List --------------------------------
 .article-list-page {
     > h1 {
         margin: 32px 0;
         text-align: center;
         padding: 0 32px;
     }
+}
+
+.sorting {
+    display: flex;
+    margin: 12px;
+    justify-content: center;
+    gap: 12px;
+    align-items: center;
+    margin: 16px 0;
+    padding: 16px;
+    background-color: #dae8f2;
+    border: 1px solid #335ED7;
+
+    h3 {
+        font-size: 24px;
+    }
+
+    form {
+        display:flex;
+        justify-content: center;
+        gap: 12px;
+        align-items: center;
+        fieldset {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            align-items: center;
+            label {
+                font-size: 16px;
+                margin:0;
+            }
+        }
+
+    }
+
+    @media only screen and (max-width: 768px) {
+        flex-direction: column;
+        form {
+            flex-direction: column;
+        }
+      }
 }
 
 .article-list {
@@ -162,7 +201,7 @@ nav {
     }
 }
 
-// Select Article Page
+// Select Article Page --------------------------------
 main.article-page {
     .article {
         display: grid;
@@ -390,7 +429,7 @@ main.article-page {
       }
 }
 
-// Select Article Page
+// Select Article Page --------------------------------
 main.article-topic-page {
     > h1 {
         margin: 32px 0;
