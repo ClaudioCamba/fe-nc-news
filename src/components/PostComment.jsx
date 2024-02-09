@@ -4,7 +4,6 @@ import { SignedInUserContext } from '../contexts/SignedInUser.jsx';
 import { postComment } from '../utils/api-requests.js';
 import CommentForm from './CommentForm.jsx';
 
-// post request comment 
 const PostComment = ({articleComments,setArticleComments}) => {
     const [feedback, setFeedback] = useState({body:'', class:''});
     const [disableForm, setDisableForm] = useState(false)
