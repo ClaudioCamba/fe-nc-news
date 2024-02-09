@@ -4,7 +4,7 @@ import Loading from './Loading.jsx';
 import Error from './Error.jsx';
 import SingleArticleList from './SingleArticleList';
 
-const ArticleList = () => {
+const ArticleList = ({query}) => {
     const [articles, setArticles] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
@@ -12,7 +12,7 @@ const ArticleList = () => {
     useEffect(()=>{
       setIsLoading(true);
   
-      getArticles().then((data)=> {
+      getArticles({query}).then((data)=> {
         setArticles(data.articles);
         setIsLoading(false);
         setError(null);
