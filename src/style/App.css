@@ -110,6 +110,12 @@ nav .nav-user span {
   align-items: normal;
 }
 
+.article-list-page > h1 {
+  margin: 32px 0;
+  text-align: center;
+  padding: 0 32px;
+}
+
 .article-list {
   display: flex;
   flex-direction: row;
@@ -340,4 +346,10 @@ main.article-page .comments .list .comment.pass-delete {
   main.article-page .comments .comment-form {
     flex-direction: column;
   }
+}
+
+main.article-topic-page > h1 {
+  margin: 32px 0;
+  text-align: center;
+  padding: 0 32px;
 }/*# sourceMappingURL=App.css.map */

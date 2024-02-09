@@ -119,6 +119,14 @@ nav {
 
 
 // Article List
+.article-list-page {
+    > h1 {
+        margin: 32px 0;
+        text-align: center;
+        padding: 0 32px;
+    }
+}
+
 .article-list {
     display: flex;
     flex-direction: row;
@@ -380,4 +388,13 @@ main.article-page {
             }
         }
       }
+}
+
+// Select Article Page
+main.article-topic-page {
+    > h1 {
+        margin: 32px 0;
+        text-align: center;
+        padding: 0 32px;
+    }
 }
