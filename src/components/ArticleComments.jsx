@@ -26,7 +26,7 @@ const ArticleComments = () => {
     },[]);
 
     return (<section className="comments">
-        <PostComment setArticleComments={setArticleComments} />
+        <PostComment articleComments={articleComments} setArticleComments={setArticleComments} />
 
         {isLoading ? <Loading /> : error ? <Error log={error}/> :
         <ul  className="list">

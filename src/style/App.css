@@ -175,7 +175,8 @@ main.article-page .article .banner img {
   height: auto;
 }
 main.article-page .article .banner .topic-badge {
-  border: 5px solid #FFF;
+  border-right: 5px solid #FFF;
+  border-bottom: 5px solid #FFF;
   position: absolute;
   top: 0;
   left: 0;
@@ -253,7 +254,7 @@ main.article-page .comments .comment-form .group-form .form-feedback {
   padding-top: 6px;
 }
 main.article-page .comments .comment-form .group-form .form-feedback span {
-  display: inline-block;
+  display: block;
   font-size: 12px;
   padding: 6px 12px;
   border-radius: 6px;
@@ -286,8 +287,45 @@ main.article-page .comments .list {
 }
 main.article-page .comments .list .comment {
   background-color: #DDD;
-  border-radius: 10px;
-  padding: 20px;
+  border-radius: 6px;
+  padding: 12px 60px 12px 12px;
+  position: relative;
+}
+main.article-page .comments .list .comment .delete-comment {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 5px;
+  border-radius: 6px;
+  background-color: #fce0e3;
+  border: 1px solid #8b0000;
+  color: #8b0000;
+}
+main.article-page .comments .list .comment.fail-delete {
+  background-color: #fce0e3;
+  color: #8b0000;
+}
+main.article-page .comments .list .comment.pass-delete {
+  background-color: #e0faee;
+  color: #006400;
+}
+main.article-page .comments .list .comment.pass-delete {
+  animation: cssAnimation 5s forwards;
+}
+@keyframes cssAnimation {
+  0% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
 }
 @media only screen and (max-width: 768px) {
   main.article-page .article {
