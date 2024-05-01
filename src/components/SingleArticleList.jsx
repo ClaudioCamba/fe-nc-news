@@ -1,3 +1,5 @@
+import {utcToDayMonthYear} from '../utils/time-formatter';
+
 const SingleArticleList = ({articleData,index}) => {
     return (<>
     <article className="article-item">

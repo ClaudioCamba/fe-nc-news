@@ -21,6 +21,7 @@ const ArticleList = ({query}) => {
         setError(error.response);
         setIsLoading(false);
       });
+      
     },[])
       
   return (<>{
