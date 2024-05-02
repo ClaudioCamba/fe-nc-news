@@ -16,17 +16,9 @@ function SortingForm({articles,setArticles}) {
       { name: 'Desc', value: 'desc' },
     ];
     
-    // useEffect(() =>{
-    //     handleSortingSelect(options, order);
-    // },[options,order])
-
-
     function handleSubmit(event) {
       event.preventDefault();
         setSearchParams({ topic: topic, sort_by: options, order: orderValue });
-        // setSearchParams({sort_by : options, order: order });
-   
-      // console.log(searchParams.get('topic'))
     }
 
   return (
@@ -57,11 +49,6 @@ function SortingForm({articles,setArticles}) {
               </ToggleButton>
             ))}
           </ButtonGroup>
-          
-          {/* <Form.Select id="sort-order" value={order} onChange={(event)=>{setOrder(event.target.value)}}>
-            <option value="desc">Descending</option>
-            <option value="asc">Ascending</option>
-          </Form.Select> */}
       </fieldset>
       <Button as="input" type="submit" value="Submit" variant="outline-primary"/>
     </Form>
