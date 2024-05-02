@@ -2,57 +2,31 @@ import { useState, useEffect } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useSearchParams } from 'react-router-dom';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import ToggleButton from 'react-bootstrap/ToggleButton';
 
 function SortingForm({articles,setArticles}) {
     const [searchParams, setSearchParams] = useSearchParams();
-    const [options, setOptions] = useState('created_at');
-    const [order, setOrder] = useState('desc');
+    const [options, setOptions] = useState(searchParams.get('sort_by') || 'created_at');
+    const [topic, setTopic] = useState(searchParams.get('topic') || '');
+    const [orderValue, setOrderValue] = useState('desc');
 
-    // const sortingAsc = (a, b) => {
-    //     if (a[options] < b[options]) {
-    //       return -1;
-    //     }
-    //     if (a[options] > b[options]) {
-    //       return 1;
-    //     }
-    //     return 0;
-    // }
+    const radios = [
+      { name: 'Asc', value: 'asc' },
+      { name: 'Desc', value: 'desc' },
+    ];
     
-    // const sortingDesc = (a, b) => {
-    //     if (a[options] < b[options]) {
-    //       return 1;
-    //     }
-    //     if (a[options] > b[options]) {
-    //       return -1;
-    //     }
-    //     return 0;
-    // }
-
-    // const handleSortingSelect = (option,order) => {
-    //     if (order === 'asc') { 
-    //         setArticles([...articles.sort(sortingAsc)]);
-    //     } else if (order === 'desc') {
-    //         setArticles([...articles.sort(sortingDesc)]);
-    //     }
-    // }
-
     // useEffect(() =>{
     //     handleSortingSelect(options, order);
     // },[options,order])
-    useEffect(() =>{
-      
-      // setSearchParams({sort_by : options, order: order });
-    },[options,order])
+
 
     function handleSubmit(event) {
       event.preventDefault();
-      console.log(searchParams.get('topic'))
-      // The serialize function here would be responsible for
-      // creating an object of { key: value } pairs from the
-      // fields in the form that make up the query.
-      // let params = serializeFormQuery(event.target);
-      // console.log(params)
-      // setSearchParams(params);
+        setSearchParams({ topic: topic, sort_by: options, order: orderValue });
+        // setSearchParams({sort_by : options, order: order });
+   
+      // console.log(searchParams.get('topic'))
     }
 
   return (
@@ -67,12 +41,29 @@ function SortingForm({articles,setArticles}) {
           </fieldset>
           <fieldset>
           <Form.Label htmlFor="sort-order">Order:</Form.Label>
-          <Form.Select id="sort-order" value={order} onChange={(event)=>{setOrder(event.target.value)}}>
+          <ButtonGroup id="sort-order">
+            {radios.map((radio, idx) => (
+              <ToggleButton
+                key={idx}
+                id={`radio-${idx}`}
+                type="radio"
+                variant={idx % 2 ? 'outline-primary' : 'outline-primary'}
+                name="radio"
+                value={radio.value}
+                checked={orderValue === radio.value}
+                onChange={(e) => setOrderValue(e.currentTarget.value)}
+              >
+                {radio.name}
+              </ToggleButton>
+            ))}
+          </ButtonGroup>
+          
+          {/* <Form.Select id="sort-order" value={order} onChange={(event)=>{setOrder(event.target.value)}}>
             <option value="desc">Descending</option>
             <option value="asc">Ascending</option>
-          </Form.Select>
+          </Form.Select> */}
       </fieldset>
-      <button>Submit</button>
+      <Button as="input" type="submit" value="Submit" variant="outline-primary"/>
     </Form>
   );
 }
