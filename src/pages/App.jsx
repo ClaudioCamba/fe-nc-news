@@ -11,7 +11,6 @@ import ArticleTopicPage from './ArticleTopicsPage.jsx';
 
 function App() {
   const [topics, setTopics] = useState([]);
-
   useEffect(() => {
     getTopics()
     .then((data)=>{
