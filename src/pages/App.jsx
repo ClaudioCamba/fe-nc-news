@@ -8,6 +8,7 @@ import Navigation from '../components/Navigation.jsx';
 import ArticleListPage from './ArticleListPage.jsx';
 import ArticlePage from './ArticlePage.jsx';
 import ArticleTopicPage from './ArticleTopicsPage.jsx';
+import InvalidUrlPage from './InvalidUrlPage.jsx';
 
 function App() {
   const [topics, setTopics] = useState([]);
@@ -27,6 +28,7 @@ function App() {
         <Route path="/" element={ <ArticleListPage /> }/>
         <Route path="/articles?" element={ <ArticleTopicPage /> } />
         <Route path="/article/:article_id" element={ <ArticlePage /> } />
+        <Route path="/*" element={ <InvalidUrlPage /> }/>
       </Routes>
     </SignedInUserProvider>
   )
