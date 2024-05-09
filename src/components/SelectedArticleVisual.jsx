@@ -1,4 +1,5 @@
 import Votes from "./Votes";
+import { utcToTimeAgo } from '../utils/time-formatter'
 
 const SelectedArticleVisual = ({selectedArticle}) =>{
     return (
@@ -7,7 +8,7 @@ const SelectedArticleVisual = ({selectedArticle}) =>{
             <h1>{selectedArticle.title}</h1>
             <p>By {selectedArticle.author} 
             <span className="material-symbols-outlined">schedule </span> 
-            {selectedArticle.created_at} 
+            {utcToTimeAgo(selectedArticle.created_at)} 
             <span className="material-symbols-outlined">comment</span> {selectedArticle.comment_count}
             </p>
         </div>

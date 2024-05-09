@@ -7,7 +7,6 @@ import ToggleButton from 'react-bootstrap/ToggleButton';
 
 function SortingForm() {
     const [searchParams, setSearchParams] = useSearchParams();
-    console.log()
     const [options, setOptions] = useState(searchParams.get('sort_by') || 'created_at');
     const [topic, setTopic] = useState(searchParams.get('topic') || '');
     const [orderValue, setOrderValue] = useState(searchParams.get('order') || 'desc');
