@@ -2,7 +2,7 @@ import { getArticles } from '../utils/api-requests.js';
 import { useSearchParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Loading from './Loading.jsx';
-import Error from './Error.jsx';
+import ErrorDisplay from './ErrorDisplay.jsx';
 import ArticleListing from './ArticleListing.jsx';
 import SortingArticles from './SortingArticles';
 
@@ -28,10 +28,12 @@ const ArticleList = () => {
       
   return (
   <>
+    { isLoading ? <Loading /> : error ? <ErrorDisplay error={error} type={'article'} /> :
+    <>
     <SortingArticles />
-    { isLoading ? <Loading /> : 
-    error ? <Error log={error}/> : 
-    <ArticleListing articles={articles} />}
+    <ArticleListing articles={articles} />
+    </>
+    }
   </>
   )
 }

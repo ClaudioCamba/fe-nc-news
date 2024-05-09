@@ -14,7 +14,6 @@ export const getArticles = ({article_id=null,query=null}) => {
         endpointString += queryArr.join('&');
     } 
   
-    console.log(endpointString)
     return axios.get(endpointString)
     .then((response)=>{
         return response.data;

@@ -5,11 +5,11 @@ import { useSearchParams } from 'react-router-dom';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import ToggleButton from 'react-bootstrap/ToggleButton';
 
-function SortingForm({articles,setArticles}) {
+function SortingForm() {
     const [searchParams, setSearchParams] = useSearchParams();
     const [options, setOptions] = useState(searchParams.get('sort_by') || 'created_at');
     const [topic, setTopic] = useState(searchParams.get('topic') || '');
-    const [orderValue, setOrderValue] = useState('desc');
+    const [orderValue, setOrderValue] = useState(searchParams.get('order') || 'desc');
 
     const radios = [
       { name: 'Asc', value: 'asc' },

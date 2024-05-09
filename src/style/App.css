@@ -1,11 +1,12 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+html {
+  height: 100%;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-size: 0;
 }
 
 html, body, div, span, applet, object, iframe,
@@ -58,20 +59,31 @@ table {
   border-spacing: 0;
 }
 
+#root {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+body h1 {
+  font-size: 42px;
+}
+body h3 {
+  font-size: 24px;
+}
+body h4 {
+  font-size: 18px;
+}
+body p, body a {
+  font-size: 16px;
+}
 body main {
   max-width: 1200px;
   margin: 0 auto;
   display: block;
   padding: 0 16px;
-}
-body main * {
-  font-size: 0;
-}
-body main h1 {
-  font-size: 42px;
-}
-body main p {
-  font-size: 16px;
+  height: 100%;
 }
 body main .loading {
   font-size: 32px;
@@ -126,9 +138,6 @@ nav .nav-user span {
   padding: 16px;
   background-color: #dae8f2;
   border: 1px solid #335ED7;
-}
-.sorting h3 {
-  font-size: 24px;
 }
 .sorting form {
   display: flex;
@@ -391,4 +400,31 @@ main.article-topic-page > h1 {
   margin: 32px 0;
   text-align: center;
   padding: 0 32px;
+}
+
+main section.invalid-section {
+  display: block;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 60px;
+  width: -moz-fit-content;
+  width: fit-content;
+  border: 1px solid #ebebeb;
+  border-radius: 8px;
+  background-color: #F8F8F8;
+  padding: 32px 42px;
+}
+main section.invalid-section h1, main section.invalid-section h4 {
+  margin-bottom: 32px;
+  text-align: center;
+  padding: 0 16px;
+  display: flex;
+}
+main section.invalid-section a {
+  border: 1px solid #ebebeb;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background-color: #FFF;
 }/*# sourceMappingURL=App.css.map */

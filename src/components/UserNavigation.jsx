@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { SignedInUserContext } from '../contexts/SignedInUser.jsx';
 
 const UserNavigation = () =>{
-    const { user, setUser } = useContext(SignedInUserContext);
+    const { user } = useContext(SignedInUserContext);
     return (
         <div className="nav-user">
             <p>{user.username}</p>

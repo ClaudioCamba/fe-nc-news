@@ -1,11 +1,16 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+$lightergrey: #F8F8F8;
+$lightgrey: #ebebeb;
+$white: #FFF;
+
+html {
+    height: 100%;
+}
+
 * {
     box-sizing: border-box;
     margin:0;
     padding:0;
+    font-size: 0;
 }
 
 html, body, div, span, applet, object, iframe,
@@ -53,46 +58,61 @@ table {
 }
 
 // General Styling --------------------------------
-body main {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: block;
-    padding: 0 16px;
+#root {
+    height: 100%;
+}
 
-    * {
-        font-size: 0;
-    }
+body {
+    height: 100%;
 
     h1 {
         font-size: 42px;
     }
 
-    p {
+    h3 {
+        font-size: 24px;
+    }
+
+    h4 {
+        font-size: 18px;
+    }
+
+    p, a {
         font-size: 16px;
     }
 
-    .loading {
-        font-size: 32px;
-        width: 100px;
-        height: 100px;
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
         display: block;
-        margin: 100px auto;
-    }
+        padding: 0 16px;
+        height: 100%;
+        
+        .loading {
+            font-size: 32px;
+            width: 100px;
+            height: 100px;
+            display: block;
+            margin: 100px auto;
+        }
+        
+        .error {
+            margin: 100px;
+            text-align: center;
+        }
     
-    .error {
-        margin: 100px;
-        text-align: center;
-    }
-
-    .topic-badge {
-        font-size: 12px;
-        background-color: #F9C10A;
-        color:#000;
-        padding:5px 10px;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
+        .topic-badge {
+            font-size: 12px;
+            background-color: #F9C10A;
+            color:#000;
+            padding:5px 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
     }
 }
+
+
 
 // Navigation --------------------------------
 nav {
@@ -135,10 +155,6 @@ nav {
     padding: 16px;
     background-color: #dae8f2;
     border: 1px solid #335ED7;
-
-    h3 {
-        font-size: 24px;
-    }
 
     form {
         display:flex;
@@ -194,7 +210,7 @@ nav {
                 bottom: 0;
                 background-color: rgba(0,0,0,0.7);
                 padding: 20px;
-                color: #FFF;
+                color: $white;
                 width: 100%;
             }
         }
@@ -238,8 +254,8 @@ main.article-page {
                 height: auto;
             }
             .topic-badge {
-                border-right: 5px solid #FFF;
-                border-bottom: 5px solid #FFF;
+                border-right: 5px solid $white;
+                border-bottom: 5px solid $white;
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -248,7 +264,7 @@ main.article-page {
         
         .detail {
             width: 100%;
-            background-color: #FFF;
+            background-color: $white;
             color: #000;
             padding: 20px;
             border: 20px solid #DDD;
@@ -274,7 +290,7 @@ main.article-page {
 
             button {
                 padding: 6px 12px;
-                color: #FFF;
+                color: $white;
                 border-radius: 5px;
 
                 &.thumb-up {
@@ -438,11 +454,33 @@ main.article-topic-page {
     }
 }
 
-// Select Article Page --------------------------------
-main.invalid-url-page {
-    > h1 {
-        margin: 32px 0;
-        text-align: center;
-        padding: 0 32px;
+// Invalid Path Page --------------------------------
+main {
+    section.invalid-section {
+        display: block;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 60px;
+        width: fit-content;
+        border: 1px solid $lightgrey;
+        border-radius: 8px;
+        background-color: $lightergrey;
+        padding: 32px 42px;
+
+        h1, h4 {
+            margin-bottom: 32px;
+            text-align: center;
+            padding: 0 16px;
+            display: flex;
+        }
+
+        a {
+            border: 1px solid $lightgrey;
+            padding: 8px 16px;
+            border-radius: 8px;
+            background-color: $white;
+        }
     }
 }
