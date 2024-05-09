@@ -22,7 +22,7 @@ const PostComment = ({articleComments,setArticleComments}) => {
 
         setArticleComments((allComments)=>[optimisticComment,...allComments]);
 
-        postComment(article_id,optimisticComment)
+        return postComment(article_id,optimisticComment)
         .then((data)=>{
             setArticleComments((allComments)=>[data.comment,...originalComments]);
             setFeedback({body:'Your comment has been posted', class:'valid'});

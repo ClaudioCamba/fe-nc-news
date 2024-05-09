@@ -17,8 +17,11 @@ function CommentForm({handlePostComment,feedback, setFeedback,disableForm,setDis
       if (commentValue === "") setFeedback({body:'Please write a comment before pressing the comment button', class:'invalid'})
     } else {
         setDisableForm(true)
-        handlePostComment(commentValue);
-        setCommentValue("");
+        handlePostComment(commentValue).then((data)=>{
+          setCommentValue("");
+          setValidated(false)
+        });
+        
     }
     
     setValidated(true);
@@ -36,6 +39,7 @@ function CommentForm({handlePostComment,feedback, setFeedback,disableForm,setDis
             placeholder="Great article!"
             value={commentValue}
             onChange={(event)=>{setCommentValue(event.target.value)}}
+            disabled={disableForm} 
         />
         <p className={`form-feedback `+ feedback.class}><span>{feedback.body}</span></p>
         </Form.Group>

@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getArticles } from '../utils/api-requests.js';
+import ErrorDisplay from './ErrorDisplay.jsx';
 import ArticleComments from './ArticleComments.jsx';
 import SelectedArticleVisual from './SelectedArticleVisual.jsx';
 import Loading from './Loading.jsx';
-import Error from './Error.jsx';
-
 
 const SelectedArticle = () => {
     const [selectedArticle, setSelectedArticle] = useState({});
@@ -27,12 +26,14 @@ const SelectedArticle = () => {
     },[]);
 
     return (<>
-    {isLoading ? <Loading /> : error ? <Error log={error}/> :
-    <>
-        <SelectedArticleVisual selectedArticle={selectedArticle}/>
-        <ArticleComments />
-    </>
-    }</>)
+    {isLoading ? <Loading /> : error ? 
+    <ErrorDisplay error={error} type={'article'} /> : 
+        <>
+            <SelectedArticleVisual selectedArticle={selectedArticle}/>
+            <ArticleComments />
+        </>
+    }
+    </>)
     }
 
 export default SelectedArticle;
