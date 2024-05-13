@@ -26,6 +26,9 @@ npm install
 ```
 npm run dev
 ```
+### Minimum requirements
+- node.js - version v18.18.2
+
 ## Future Features
 - Post articles
 - Delete articles
