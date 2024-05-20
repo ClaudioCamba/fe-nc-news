@@ -6,6 +6,7 @@ import Navigation from '../components/Navigation.jsx';
 import ArticleListPage from './ArticleListPage.jsx';
 import ArticlePage from './ArticlePage.jsx';
 import ArticleTopicPage from './ArticleTopicsPage.jsx';
+import UserAccountPage from './UserAccountPage.jsx';
 import InvalidPathPage from './InvalidPathPage.jsx';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={ <ArticleListPage /> }/>
         <Route path="/articles" element={ <ArticleTopicPage /> } />
         <Route path="/article/:article_id" element={ <ArticlePage /> } />
+        <Route path="/account" element={ <UserAccountPage /> } />
         <Route path="/*" element={ <InvalidPathPage /> }/>
       </Routes>
     </SignedInUserProvider>

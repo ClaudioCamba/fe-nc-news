@@ -41,7 +41,7 @@ function Navigation() {
             </NavDropdown>
           </Nav>
           <Nav>
-            <Nav.Link href="/">
+            <Nav.Link href="/account">
               <UserNavigation />
             </Nav.Link>
           </Nav>

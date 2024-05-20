@@ -31,6 +31,13 @@ export const getComments = (article_id) => {
     })
 }
 
+export const getUsers = () => {
+    return axios.get(`https://nc-news-qvgz.onrender.com/api/users`)
+    .then((response) => {
+        return response.data;
+    })
+}
+
 export const patchVotes = (article_id,action) => {
     const update = action === 'upvote' ? { inc_votes :  +1 } : { inc_votes :  -1 };
     return axios.patch(`
