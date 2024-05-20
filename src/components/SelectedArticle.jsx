@@ -14,7 +14,6 @@ const SelectedArticle = () => {
 
     useEffect(() =>{
         setIsLoading(true)
-
         getArticles({article_id})
         .then((data)=>{ 
             setSelectedArticle(data.article)
