@@ -7,7 +7,7 @@ import CommentForm from './CommentForm.jsx';
 const PostComment = ({articleComments,setArticleComments}) => {
     const [feedback, setFeedback] = useState({body:'', class:''});
     const [disableForm, setDisableForm] = useState(false)
-    const { user,setUser } = useContext(SignedInUserContext);
+    const { user, setUser } = useContext(SignedInUserContext);
     const { article_id } = useParams();
     
     const handlePostComment = (commentValue) => {

@@ -427,4 +427,8 @@ main section.invalid-section a {
   padding: 8px 16px;
   border-radius: 8px;
   background-color: #FFF;
+}
+
+main.user-account-page section ol {
+  font-size: 12px;
 }/*# sourceMappingURL=App.css.map */
