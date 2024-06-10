@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getUsers } from "../utils/api-requests";
+import Users from "./Users.jsx" 
 // import { SignedInUserContext } from '../contexts/SignedInUser.jsx';
 
 const UsersSelect = () => {
@@ -9,8 +10,8 @@ const UsersSelect = () => {
     useEffect(()=>{
         getUsers()
         .then((data)=>{
-            SetUsers(data.users);
             console.log(data)
+            SetUsers(data.users);
         })
     },[])
 
@@ -20,7 +21,7 @@ const UsersSelect = () => {
             <ol className="users-list">
                 {
                     users ? users.map((user, index)=> {
-                        return <li key={user.username}>{user.username}</li>
+                        return <li key={index}><Users user={user} /></li>
                     }) : null
                 }
             </ol>
