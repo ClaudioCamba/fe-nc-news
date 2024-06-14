@@ -488,10 +488,28 @@ main {
 // User Account Page --------------------------------
 main.user-account-page {
     section {
-        ol {
+        ul {
+            display: flex;
+            flex-direction: row;
+            font-size: 12px;
+            gap:10px;
 
-                font-size: 12px;
-
+            li {
+                .user-btn {
+                    width: 175px;
+                    height: 175px;
+                    background-color: #FFFFFF;
+                    padding: 12px;
+                    
+                    img {
+                        display:inline-block;
+                        max-width: 125px;
+                        max-height: 100px;
+                        width: auto;
+                        height: auto;
+                    }
+                }
+            }
         }
     }
 }

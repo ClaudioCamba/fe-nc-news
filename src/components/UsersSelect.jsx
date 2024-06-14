@@ -18,13 +18,13 @@ const UsersSelect = () => {
 
     return (
         <section className='users-select'>
-            <ol className="users-list">
+            <ul className="users-list">
                 {
                     users ? users.map((user, index)=> {
                         return <li key={index}><Users user={user} /></li>
                     }) : null
                 }
-            </ol>
+            </ul>
         </section>
     )
 }

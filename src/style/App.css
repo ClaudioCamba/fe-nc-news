@@ -429,6 +429,22 @@ main section.invalid-section a {
   background-color: #FFF;
 }
 
-main.user-account-page section ol {
+main.user-account-page section ul {
+  display: flex;
+  flex-direction: row;
   font-size: 12px;
+  gap: 10px;
+}
+main.user-account-page section ul li .user-btn {
+  width: 175px;
+  height: 175px;
+  background-color: #FFFFFF;
+  padding: 12px;
+}
+main.user-account-page section ul li .user-btn img {
+  display: inline-block;
+  max-width: 125px;
+  max-height: 100px;
+  width: auto;
+  height: auto;
 }/*# sourceMappingURL=App.css.map */
