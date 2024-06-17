@@ -1,23 +1,21 @@
 import { useEffect, useState } from "react";
 import { getUsers } from "../utils/api-requests";
-import Users from "./Users.jsx" 
-// import { SignedInUserContext } from '../contexts/SignedInUser.jsx';
+import Users from "./Users.jsx" ;
 
 const UsersSelect = () => {
-    const [ users, SetUsers ] = useState(null);
-    // const { user, setUser } = useContext(SignedInUserContext);
+    const [ users, setUsers ] = useState(null);
     
     useEffect(()=>{
         getUsers()
         .then((data)=>{
-            console.log(data)
-            SetUsers(data.users);
+            setUsers(data.users);
         })
     },[])
 
 
     return (
         <section className='users-select'>
+            <h3>Select Account</h3>
             <ul className="users-list">
                 {
                     users ? users.map((user, index)=> {

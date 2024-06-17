@@ -1,7 +1,14 @@
+import { useContext } from 'react';
+import { SignedInUserContext } from '../contexts/SignedInUser.jsx';
+
 const Users = ({user}) => {
 
+    const { setSignedUser } = useContext(SignedInUserContext);
+
     return (
-        <button className="user-btn">
+        <button className="user-btn" onClick={()=> {
+            setSignedUser(user);
+        }}>
             <div className="user-icon">
                 <img src={`${user.avatar_url}`} alt={`${user.username}`}/>
             </div>

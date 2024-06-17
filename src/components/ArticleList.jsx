@@ -14,7 +14,6 @@ const ArticleList = () => {
   
     useEffect(()=>{
       setIsLoading(true);
-
       getArticles({query}).then((data)=> {
         setArticles(data.articles);
         setIsLoading(false);

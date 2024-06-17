@@ -7,15 +7,15 @@ import CommentForm from './CommentForm.jsx';
 const PostComment = ({articleComments,setArticleComments}) => {
     const [feedback, setFeedback] = useState({body:'', class:''});
     const [disableForm, setDisableForm] = useState(false)
-    const { user, setUser } = useContext(SignedInUserContext);
+    const { signedUser} = useContext(SignedInUserContext);
     const { article_id } = useParams();
     
     const handlePostComment = (commentValue) => {
         const originalComments = articleComments.map(comment => comment);
         const optimisticComment = {
             body: commentValue,
-            author: user.username,
-            username: user.username,
+            author: signedUser.username,
+            username: signedUser.username,
             votes: 0,
             created_at: Date.now()
         }

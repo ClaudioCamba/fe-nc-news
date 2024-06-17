@@ -1,16 +1,17 @@
 import axios from "axios";
 
-export const getArticles = ({article_id=null,query}) => {
+export const getArticles = ({ article_id = null,query=null}) => {
 
     let endpointString = 'https://nc-news-qvgz.onrender.com/api/articles';
     if (article_id) endpointString += '/'+article_id;
+    
   
-    return axios.get(endpointString,{
-        params: {
-            topic: query.get('topic') || null,
-            sort_by: query.get('sort_by') || null,
-            order: query.get('order') || null,
-        },
+    return axios.get(endpointString, {
+        params:  query !== null ? {
+            topic: query.get('topic') || undefined,
+            sort_by: query.get('sort_by') || undefined,
+            order: query.get('order') || undefined,
+        }: undefined,
     })
     .then((response)=>{
         return response.data;

@@ -6,7 +6,7 @@ import CommentDeleteButton from './CommentDeleteButton.jsx';
 
     
 const Comment = ({comment}) => {
-    const { user, setUser } = useContext(SignedInUserContext);
+    const { signedUser } = useContext(SignedInUserContext);
     const [commentDeleted, setCommentDeleted] = useState({body:'Deleting comment...', optimistic: false, class: null});
 
     return(<>
@@ -19,7 +19,7 @@ const Comment = ({comment}) => {
             <p>comment author: {comment.author? comment.author : null}</p>
             <p>comment votes: {comment.votes}</p>
             {
-                user.username === comment.author &&  comment.comment_id ? 
+                signedUser.username === comment.author &&  comment.comment_id ? 
                 <CommentDeleteButton commentId={comment.comment_id} setCommentDeleted={setCommentDeleted}/>
                 : null
             }

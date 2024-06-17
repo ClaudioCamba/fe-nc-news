@@ -1,12 +1,12 @@
 import { useContext } from 'react';
 import { SignedInUserContext } from '../contexts/SignedInUser.jsx';
 
-const UserNavigation = () =>{
-    const { user } = useContext(SignedInUserContext);
+const UserNavigation = () => {
+    const { signedUser } = useContext(SignedInUserContext);
     return (
         <div className="nav-user">
-            <p>{user.username}</p>
-            <span><img src={user.avatar_url} alt={user.username}/></span>
+            <p>{signedUser.username}</p>
+            <span><img src={signedUser.avatar_url} alt={signedUser.username}/></span>
         </div>
     )
 }
